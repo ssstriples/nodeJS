@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // 함수
+    var sum = function(a, b) {
+        return a+b;
+    }
+    var c = sum(10, 20);
+    console.log(c)
+</script>
+
+<script>
+    // 객체
+    function Car(a, b) {
+        this.name = a;      // 속성
+        this.color = b;
+        var move = "전진";       // 내부에서만 접근 가능한 private변수
+    }
+    
+    var a = new Car("현대", "노란")
+    console.log(a.name)
+    console.log(a.color)
+
+    var b = new Car("기아", "파란")
+    console.log(b.name)
+    console.log(b.color)
+</script>
+
+
+</body>
+</html>
