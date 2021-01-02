@@ -1,0 +1,16 @@
+{
+  "name": "node_js",
+  "version": "1.0.0",
+  "description": "nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start" : "npx nodemon index.js",
+    "dev" : "nodemon index.js"
+  },
+  "author": "44sunghun.lee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuid4": "^2.0.2"
+  }
+}
