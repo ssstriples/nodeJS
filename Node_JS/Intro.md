@@ -161,13 +161,14 @@ router.get('/products', loginRequired, (req, res) => {
     - DELETE /users/(ID) => 사용자 한 명 삭제
 
 ### 3.7 정적파일
-
+- image, css, js파일 url
 
 ### 3.8 Global View Variable
-
+- 로그인 상태 등과 같은 정보는 Global View Variable로 설정하여 어디서든 접근할 수 있도록 한다.
 
 ### 3.9 404, 500 error handling
-
+- 페이지 없음
+- 에러 발생
 
 ### 3.10 nunjucks macro
 

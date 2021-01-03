@@ -24,6 +24,15 @@ app.use( bodyParser.urlencoded({ extended : false }) );
 //     }
 // });
 
+// 정적파일
+app.use( '/uploads', express.static('uploads') );
+
+// Global View Variable
+app.use( (req, res, next) => {
+    app.locals.isLogin = false;
+    next();
+});
+
 app.get('/', (req, res) => {
     res.send('hello express');
 });
@@ -39,6 +48,19 @@ app.use('/contacts', contacts);
 app.get('/portfolio', (req, res) => {
     res.send('portfolio get');
 });
+
+
+// 404, 500 error handling
+app.use( (req, res, _ ) => {
+    res.status(400).render('common/404.html');
+
+});
+
+app.use( (req, res, _ ) => {
+    res.status(500).render('common/500.html');
+    
+});
+
 
 app.listen(port, () => {
     console.log('Express listening on port', port);
