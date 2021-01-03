@@ -129,10 +129,36 @@ app.use('/contacts', contacts);
 ### 3.5 미들웨어
 - npm install morgan
     - 터미널에서 logging가능한 기능
-    
+- 로그인, 관리자 여부 등 라우팅 전 처리 필요할 때 사용
+<pre>
+<code>
+function loginRequired(req, res, next) {
+    if(로그인이 되어있지 않으면) {
+        res.redirect(로그인창으로)
+    } else {
+        next()
+    }
+}
+...
+router.get('/products', loginRequired, (req, res) => {
 
+    //res.send('admin products');
+    res.render('admin/products.html', {
+        message : '<p1>태그가 출력됩니다.</p1>',
+        online : 'express'
+    })
+})
+</code>
+</pre>
 
 ### 3.6 form(body-parser)
+- HTML Form을 통해 data 송/수신
+- REST API
+    - GET /users => 사용자 정보
+    - POST /users => 사용자 추가
+    - GET /users/(ID) => 사용자 한 명 정보
+    - POS /users/(ID) => 사용자 한 명 수정
+    - DELETE /users/(ID) => 사용자 한 명 삭제
 
 ### 3.7 정적파일
 

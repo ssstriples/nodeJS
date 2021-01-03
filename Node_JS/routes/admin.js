@@ -17,6 +17,7 @@ function loginRequired(req, res, next) {
     // } else {
     //     next()
     // }
+    next();
 }
 
 router.get('/', testMiddleWare, testMiddleWare2, (req, res) => {
@@ -30,6 +31,14 @@ router.get('/products', loginRequired, (req, res) => {
         message : '<p1>태그가 출력됩니다.</p1>',
         online : 'express'
     })
+})
+
+router.get('/products/write', (req, res) => {
+    res.render('admin/write.html');
+})
+
+router.post('/products/write', (req, res) => {
+    res.send(req.body);
 })
 
 module.exports = router;
