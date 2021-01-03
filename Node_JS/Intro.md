@@ -173,5 +173,8 @@ router.get('/products', loginRequired, (req, res) => {
 ### 3.10 nunjucks macro
 - 상단 메뉴 구현
 
-
 ### 3.11 Express 권장 구조
+- Express관련 Setting
+- controllers/index.js 대분류 url + 폴더 위치
+- controllers/admin/index.js (admin url + 미들웨어)
+- controllers/admin/admin.ctr.js (컨트롤러 역할)
