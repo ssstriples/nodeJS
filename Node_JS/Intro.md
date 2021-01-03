@@ -171,7 +171,7 @@ router.get('/products', loginRequired, (req, res) => {
 - 에러 발생
 
 ### 3.10 nunjucks macro
-
+- 상단 메뉴 구현
 
 
 ### 3.11 Express 권장 구조

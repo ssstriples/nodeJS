@@ -30,6 +30,7 @@ app.use( '/uploads', express.static('uploads') );
 // Global View Variable
 app.use( (req, res, next) => {
     app.locals.isLogin = false;
+    app.locals.req_path = req.path;     // 현재 URL
     next();
 });
 
