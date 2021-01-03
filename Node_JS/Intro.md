@@ -102,12 +102,28 @@
     - npm install -g nodemon
 
 ### 3.2 Routing
+- routes directory
+- admin, contacts js파일 생성
+- index에서 참조 및 사용
+<pre>
+<code>
+const admin = require('./routes/admin');
+const contacts = require('./routes/contacts');
 
+...
+
+app.use('/admin', admin);
+app.use('/contacts', contacts);
+</code>
+</pre>
 
 ### 3.3 View Engine - Nunjucks
-
+- View Engine이란?
+    - Controler단에서 읽어온 정보를 가지고 HTML등 View로 뿌려줌
+- npm install nunjucks
 
 ### 3.4 템플릿 상속
+- 
 
 
 ### 3.5 미들웨어

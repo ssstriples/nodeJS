@@ -4,13 +4,14 @@
   "description": "nodeJS",
   "main": "index.js",
   "scripts": {
-    "start" : "npx nodemon index.js",
-    "dev" : "nodemon index.js"
+    "start": "npx nodemon -e js,html index.js",
+    "dev": "nodemon index.js"
   },
   "author": "44sunghun.lee",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "nunjucks": "^3.2.2",
     "uuid4": "^2.0.2"
   }
 }
