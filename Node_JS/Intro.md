@@ -123,11 +123,13 @@ app.use('/contacts', contacts);
 - npm install nunjucks
 
 ### 3.4 템플릿 상속
-- 
-
+- 기본이 되는 틀의 내용을 상속
+- products.html extends base.html
 
 ### 3.5 미들웨어
-
+- npm install morgan
+    - 터미널에서 logging가능한 기능
+    
 
 
 ### 3.6 form(body-parser)
