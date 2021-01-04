@@ -10,9 +10,12 @@
   "author": "44sunghun.lee",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
     "nunjucks": "^3.2.2",
+    "sequelize": "^4.42.0",
     "uuid4": "^2.0.2"
   }
 }
