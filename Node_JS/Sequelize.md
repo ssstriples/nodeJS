@@ -62,3 +62,52 @@ mysql> show databases;
     - sequelize : npm install sequelize@4.42.0
     - mysql2 : npm install mysql2
 
+### 4.5 모델 작성
+- 테이블 생성
+<pre>
+<code>
+module.exports = function(sequelize, DataTypes){
+    const Products = sequelize.define('Products',
+        {
+            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+            name : { type: DataTypes.STRING },
+            price : { type: DataTypes.INTEGER },
+            description : { type: DataTypes.TEXT }
+        }
+    );
+    return Products;
+} 
+</code>
+</pre>
+
+### 4.6 DB 입력 (insert)
+<pre>
+<code>
+models.Products.create({
+    name : req.body.name,
+    price : req.body.price,
+    description : req.body.description
+}).then( () => {
+    res.redirect('/admin/products');
+});
+</code>
+</pre>
+<pre>
+<code>
+models.Products.create(req.body).then( () => {
+        res.redirect('/admin/products');
+});
+</code>
+</pre>
+
+### 4.7 DB 조회
+<pre>
+<code>
+models.Products.findAll({
+}).then( (productList) => {
+    res.render('admin/products.html', 
+        { productList : productList }
+    );
+})
+</code>
+</pre>
