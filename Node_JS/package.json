@@ -5,17 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon -e js,html server.js",
+    "cstart": "npx nodemon -e js,html server_crwaling.js",
     "dev": "nodemon index.js"
   },
   "author": "44sunghun.lee",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
     "nunjucks": "^3.2.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "sequelize": "^4.42.0",
     "uuid4": "^2.0.2"
   }
