@@ -111,3 +111,27 @@ models.Products.findAll({
 })
 </code>
 </pre>
+
+### 4.8 상세페이지 보기
+- layout : detail.html
+- 동적 라우팅 : /products/detail/**:id**
+- PrimaryKey로 찾기 : models.Products.findByPk(req.params.id)
+
+### 4.9 momentjs
+- npm install moment
+
+### 4.10 DB 수정
+- update
+- write form action을 비워둠으로써 수정할 때도 재사용 가능
+
+### 4.11 DB 삭제
+- delete
+    <pre>
+    <code>
+    models.Products.destroy({
+        where : {
+            id : req.params.id
+        }
+    }
+    </code>
+    </pre>
