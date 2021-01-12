@@ -38,8 +38,13 @@
     - Boolean : true 또는 false
     
 ### 7.2 Express 연동
+- Query HTTP요청/응답
+- Postman 설치
+    - Get Request : http://localhost:4000/graphql?query={hello}
+- npm i express express-graphql
 
 ### 7.3 데이터 추가
+- 
 
 ### 7.4 데이터 수정, 삭제
 
