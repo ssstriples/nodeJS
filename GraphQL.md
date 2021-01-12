@@ -105,5 +105,48 @@
     </pre>
 
 ### 7.5 데이터 수정, 삭제
+- Postman
+    - Post Content-Type application/json
+    <pre>
+    <code>
+    {
+        "query": "mutation updateProduct($id: ID!, $input: ProductInput!) { updateProduct(id: $id, input: $input) { id } }",
+        "variables": { "id" : 1,  "input" : { "name" : "수정상품" , "price" : 1000 , "description" : "후후후" } }
+    }
+    </code>
+    </pre>
+    - response
+    <pre>
+    <code>
+    {
+        "data": {
+            "updateProduct": {
+                "id": "1"
+            }
+        }
+    }
+    </code>
+    </pre>
+    - 삭제
+    <pre>
+    <code>
+    {
+        "query": "mutation deleteProduct($id: ID!) { deleteProduct(id: $id) }",
+        "variables": { "id" : 1 }
+    }
+    </code>
+    </pre>
+    - response
+    <pre>
+    <code>
+    {
+        "data": {
+            "deleteProduct": "remove success"
+        }
+    }
+    </code>
+    </pre>  
 
-### 클라이언트 사용하기
+
+### 7.6 클라이언트 사용하기
+- 
