@@ -43,9 +43,67 @@
     - Get Request : http://localhost:4000/graphql?query={hello}
 - npm i express express-graphql
 
-### 7.3 데이터 추가
-- 
+### 7.3 데이터 읽기
+- 변수를 사용한 query 주고 받기
+#### query
+<pre>
+<code>
+{
+	getProduct( id : 2 ) {
+    name
+    price
+  }
+}
+</code>
+</pre>
+#### result
+<pre>
+<code>
+{
+  "data": {
+    "getProduct": {
+      "name": "두번째 제품",
+      "price": 4000
+    }
+  }
+}
+</code>
+</pre>
 
-### 7.4 데이터 수정, 삭제
+- Postman
+    - Get Request : http://localhost:4000/graphql?query={getProduct( id : 1 ) {
+        name
+        price
+    }
+}
+
+### 7.4 데이터 쓰기
+- mutation
+- Postman
+    - Post Content-Type application/json
+    <pre>
+    <code>
+    {
+        "query": "mutation addProduct($input: ProductInput) { addProduct(input: $input) { id, name, price} }",
+        "variables": { "input" : { "name" : "네번째상품" , "price" : 3000 , "description" : "후후후" } }
+    }
+    </code>
+    </pre>
+    - response
+    <pre>
+    <code>
+    {
+        "data": {
+            "addProduct": {
+                "id": "4",
+                "name": "네번째상품",
+                "price": 3000
+            }
+        }
+    }
+    </code>
+    </pre>
+
+### 7.5 데이터 수정, 삭제
 
 ### 클라이언트 사용하기
