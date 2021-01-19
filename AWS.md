@@ -17,9 +17,24 @@
 - SSH
     - ssh -i [pem] [user@url]
 
-
 ### 8.3 Nodejs 설치
+- curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+- sudo apt-get install -y nodejs
+- opt 하위 project 생성
+    - sudo npm install -g express express-generator nodemon
+    - express 치면 generate됨
+    - npm install
+    - npm start
+- AWS 보안그룹 설정
+    - 인바운드 규칙 3000 port 추가
+- sudo npm install -g pm2
+- pm2 start bin/www
+- pm2 list
+- pm2 stop 0
+
 ### 8.4 Mysql RDS
+-
+
 ### 8.5 소스파일 업로드
 ### 8.6 NGINX 설치 및 배포완료
 - NGINX vs Apache
