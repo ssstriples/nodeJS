@@ -33,8 +33,35 @@
 - pm2 stop 0
 
 ### 8.4 Mysql RDS
--
+- RDS 서비스
+- 데이터베이스 생성
+    - 퍼블릭 액세스 가능성 : 예 (외부에서 접속할 수 있게)
+- 보안 그룹 설정
+    - 인바운드 편집(내IP와 인스턴스 보안그룹ID)
+- 워크벤치 접속
 
 ### 8.5 소스파일 업로드
+- git clone or filezila
+- npm install
+- .env 파일 설정
+- pm2 start index.js
+
+
 ### 8.6 NGINX 설치 및 배포완료
 - NGINX vs Apache
+- sudo vi /etc/apt/sources.list
+    - deb http://nginx.org/packages/ubuntu/ xenial nginx
+    - deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+- sudo apt-get update
+- sudo apt-get install nginx
+- sudo service nginx start
+- sudo service nginx status
+- 보안 그룹 root위치 보여주기
+    - 인스턴스 보안그룹
+    - 보안그룹 수정 - 인바운드 편집
+    - 기존 3000port지우고 규칙저장
+    - 규칙추가 :  http 80 port 모두 접속할 수 있도록 수정
+- nginx proxy설정
+    - cd /etc/nginx/site-enabled/default파일 설정
+    - proxy_pass http://127.0.0.1:3000/;
+- sudo service nginx reload
