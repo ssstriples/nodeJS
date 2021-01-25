@@ -58,4 +58,28 @@
 ---
 
 ### 9.2 Dockerfile로 이미지 만들기
-- 
+- Dockerfile만들기
+- 이미지 만들기
+    - docker build -t test .
+- 실행
+    - docker run -d -p 80:80 test
+- 컨테이너 접속
+    - docker exec -it [CONTAINER ID] /bin/bash
+
+### 9.3 Docker-compose
+- 보통 서비스
+    - Nginx, node, mysql 컨테이너를 띄운다
+    - link옵션으로 연결
+
+- 그밖에 붙여넣을 파일이 많을 시
+- 컨테이너간의 연결관계를 설정하는 파일
+- python기반 yml확장자 사용
+- docker-compose 설치
+    - https://docs.docker.com/compose/install/
+- 권한 부여
+    - sudo chmod +x /usr/local/bin/docker-compose
+- docker-compose version
+
+- docker-node-mysql 작업후
+    - docker-compose build
+    - docker-compose up
