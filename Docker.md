@@ -83,3 +83,18 @@
 - docker-node-mysql 작업후
     - docker-compose build
     - docker-compose up
+- 내리기
+    - docker-compose down
+
+### 9.4 컨테이너 순서
+- Mysql 컨테이너 -> NodeJS 컨테이너 띄우고 싶을때
+- netcat설치
+    - 해당 Port가 떠있는지 check하는 shellscript작성
+- nodejs 컨테이너에서 nc 명령어 확인
+    - docker exec -it docker-node-mysql_node_1 /bin/bash
+    - nc db_url 3306
+
+### 9.5 서비스 배포
+- mysql migration
+- nodejs 접속
+- 서비스 실행
